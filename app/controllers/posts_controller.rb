@@ -6,10 +6,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
-      redirect_to root
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    require(:post).permit(:title, :body, :current_user[:id])
+    params.require(:post).permit(:title, :body)
   end
 
 end
