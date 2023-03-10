@@ -3,10 +3,10 @@
 <ul>
   <% @posts.each do |post| %>
   <li>
-    <%= link_to post.title %>
+    <%= link_to post.title, post %>
   </li>
   <% end %>
 </ul>
 
-
+<p><%=link_to "Add a new post", new_post_path %></p>
 
