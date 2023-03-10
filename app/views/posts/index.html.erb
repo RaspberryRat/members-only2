@@ -1,10 +1,19 @@
 <h1>Post List</h1>
 
+<% if user_signed_in? %>
+    <p><%= current_user.email %></p>
+    <% else %>
+    <% end %>
+
 <ul>
   <% @posts.each do |post| %>
   <li>
     <%= link_to post.title, post %>
-    <span>by <%= post.user.username %></span>
+    <% if user_signed_in? %>
+    <span class="author-clear"><%= post.user.email %></span>
+    <% else %>
+    <span class="anon-author">by Anonymous</span>
+    <% end %>
 
   </li>
   <% end %>
