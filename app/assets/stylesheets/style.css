@@ -85,6 +85,7 @@ table {
   justify-content: space-around;
   align-items: center;
   margin-left: 33%;
+  color: var(--xtra-dark-green);
 }
 
 
@@ -103,7 +104,50 @@ table {
 .footer {
   width: 100vw;
   font-size: 30px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 4fr 0.5fr;
+  justify-items: center;
   align-items: center;
+}
+
+button,
+.link-btn {
+  background-color: var(--med-green);
+  color: var(--beige);
+  border: 0px;
+  padding: 3px 8px;
+}
+
+.content-container {
+  color: var(--beige);
+  font-size: 1.3rem;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(8, 1fr);
+
+}
+
+.post-list > li {
+  background-color: var(--xtra-dark-green);
+
+}
+
+.link-btn {
+  font-size: 20px;
+  padding: 3px 8px;
+}
+
+.link-btn > a:link,
+.link-btn > a:visited,
+.link-btn > a:hover,
+.link-btn > a:active,
+.post-list > li > a:link,
+.post-list > li > a:visited,
+.post-list > li > a:hover,
+.post-list > li > a:active {
+  color: var(--beige);
+  text-decoration: none;
 }
