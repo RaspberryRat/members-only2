@@ -118,7 +118,8 @@ table {
 
 button,
 .link-btn,
-.user .content-container input[type=submit] {
+.user .content-container input[type=submit],
+.new-post-container input[type=submit] {
   background-color: var(--med-green);
   color: var(--beige);
   border: 0px;
@@ -129,7 +130,6 @@ button,
   color: var(--beige);
   font-size: 1.3rem;
   margin: 20px;
-
 }
 
 .post-list {
@@ -137,12 +137,10 @@ button,
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 30px;
-
 }
 
 .post-list > li {
   background-color: var(--xtra-dark-green);
-
 }
 
 .link-btn {
@@ -173,6 +171,7 @@ a:visited {
   margin: 10px 25px;
   border-radius: 30px;
 }
+
 .post-list li {
   border-radius: 20px;
 }
@@ -192,7 +191,6 @@ label {
 .show-title {
   font-size: 2rem;
   color: var(--med-green);
-
 }
 
 .show-post .content-container {
@@ -205,4 +203,31 @@ label {
 
 .show-post .content-container .post-body {
   color: var(--xtra-dark-green);
+}
+.new-post-container {
+ color: var(--med-green);
+}
+
+.new-post-container form {
+ display: flex;
+ flex-direction: column;
+ align-items: stretch;
+ gap: 10px;
+ color: var(--xtra-dark-green);
+ margin-top: 25px;
+}
+
+#post_body {
+  height: 300px;
+  resize: none;
+  overflow: auto;
+}
+
+.new-post-container form input[type=submit] {
+  align-self: start;
+}
+
+.flash-message {
+  color: black;
+  font-size: 2rem;
 }

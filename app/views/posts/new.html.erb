@@ -1,9 +1,11 @@
-<h2>New Post</h2>
+<div class="new-post-container">
+  <h2>New Post</h2>
 
-<%= form_with model: @post do |form| %>
-  <%= form.label :title, "Post title:" %>
-  <%= form.text_field :title, placeholder: "What's your headline?" %>
-  <%= form.label :body, "Body:" %>
-  <%= form.text_field :body, :size => 100, placeholder: "What's the story?" %>
-  <%= form.submit "Submit Post"%>
-<% end %>
+  <%= form_with model: @post do |form| %>
+    <%= form.label :title, "Post title:" %>
+    <%= form.text_field :title, placeholder: "What's your headline?" %>
+    <%= form.label :body, "Body:" %>
+    <%= form.text_area :body, placeholder: "What's the story?" %>
+    <%= form.submit "Submit Post"%>
+  <% end %>
+</div>

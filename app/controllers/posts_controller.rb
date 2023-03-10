@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
+      flash.now[:error] = "Error, your post wasn't submitted"
       render :new, status: :unprocessable_entity
     end
   end

@@ -28,6 +28,12 @@
     </ul>
   </div>
 <div class="content-container">
+  <div class="flash-message">
+    <% flash.each do |name, message| %>
+      <div class="<%= name %>"><%= message %></div>
+  <% end %>
+  </div>
+
     <%= yield %>
 
 </div>
