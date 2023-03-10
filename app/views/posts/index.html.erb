@@ -1,19 +1,17 @@
 <h1>Post List</h1>
 
-<% if user_signed_in? %>
-    <p><%= current_user.email %></p>
+<p class="logged-in-user">You are logged in as:
+  <% if user_signed_in? %>
+    <strong><%= current_user.email %></strong>
     <% else %>
     <% end %>
+</p>
 
 <ul>
   <% @posts.each do |post| %>
   <li>
     <%= link_to post.title, post %>
-    <% if user_signed_in? %>
-    <span class="author-clear"><%= post.user.email %></span>
-    <% else %>
-    <span class="anon-author">by Anonymous</span>
-    <% end %>
+    <%= render "author", :post => post %>
 
   </li>
   <% end %>

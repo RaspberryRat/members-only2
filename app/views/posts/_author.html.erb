@@ -1,0 +1,5 @@
+ <% if user_signed_in? %>
+    <span class="author-clear"><%= post.user.email %></span>
+    <% else %>
+    <span class="anon-author">by Anonymous</span>
+    <% end %>

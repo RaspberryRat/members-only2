@@ -1,3 +1,15 @@
+<p class="logged-in-user"> You are logged in as:
+  <% if user_signed_in? %>
+      <strong><%= current_user.email %></strong>
+    <% else %>
+    <% end %>
+</p>
 
 <h3><%= @post.title %></h3>
+<%# <%= render "author", :post => post %>
+ <% if user_signed_in? %>
+    <span class="author-clear"><%= @post.user.email %></span>
+    <% else %>
+    <span class="anon-author">by Anonymous</span>
+    <% end %>
 <p> <%= @post.body %></p>
