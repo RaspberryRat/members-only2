@@ -14,7 +14,7 @@
     <div class="container">
   <div class="header">
     <ul>
-      <li class="company-header"><span>Shovel IT</span> <span class="company-icon"><%= image_tag "shovel-icon.png" %></span></li>
+      <li class="company-header"><span><%= link_to "Shovel IT", root_path %></span> <span class="company-icon"><%= image_tag "shovel-icon.png" %></span></li>
       <li class="logged-in-user">
       <% if user_signed_in? %>
         <strong><%= current_user.email %></strong>
