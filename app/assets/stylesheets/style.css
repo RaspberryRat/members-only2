@@ -105,7 +105,7 @@ table {
   width: 100vw;
   font-size: 30px;
   display: grid;
-  grid-template-columns: 4fr 0.5fr;
+  grid-template-columns: 0.5fr 4fr 0.5fr;
   justify-items: center;
   align-items: center;
 }
@@ -121,12 +121,15 @@ button,
 .content-container {
   color: var(--beige);
   font-size: 1.3rem;
+  margin: 20px;
+
 }
 
 .post-list {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
 
 }
 
@@ -144,10 +147,30 @@ button,
 .link-btn > a:visited,
 .link-btn > a:hover,
 .link-btn > a:active,
-.post-list > li > a:link,
-.post-list > li > a:visited,
-.post-list > li > a:hover,
-.post-list > li > a:active {
+.post-title > a:link,
+.post-title > a:visited,
+.post-title > a:hover,
+.post-title > a:active {
   color: var(--beige);
   text-decoration: none;
 }
+
+.post-container {
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr 3fr;
+  gap: 10px;
+  margin: 10px 25px;
+}
+
+.post-title {
+
+}
+
+.post-author {
+
+}
+
+.post.body {
+
+}
+

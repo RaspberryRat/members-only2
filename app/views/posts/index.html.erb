@@ -19,17 +19,28 @@
     <ul class="post-list">
       <% @posts.each do |post| %>
       <li>
-        <%= link_to post.title, post %>
-        <%= render "author", :post => post %>
+        <ul class="post-container">
+          <li class="post-title">
+            <%= link_to post.title, post %>
+          </li>
+          <li class="post-author">
+            <%= render "author", :post => post %>
+          </li>
+          <li class="post-body">
+            <%= post.body %>
+          </li>
+        </ul>
 
       </li>
       <% end %>
     </ul>
 
-    <p><span class="link-btn"><%= link_to "Add a new post", new_post_path %></span></p>
+
 </div>
 
-  <div class="footer"><span>Smelly Industries</span>
-  <span class="link-btn"><%= link_to "Sign up here", new_user_registration_path %></span>
+  <div class="footer">
+    <span class="link-btn"><%= link_to "Add a new post", new_post_path %></span>
+    <span>Smelly Industries</span>
+    <span class="link-btn"><%= link_to "Sign up here", new_user_registration_path %></span>
   </div>
 </div>
