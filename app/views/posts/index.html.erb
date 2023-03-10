@@ -1,25 +1,37 @@
-<h1>Post List</h1>
+<div class="container">
+  <div class="header">
+    <ul>
+      <li class="company-header"><span>Shovel IT</span> <span class="company-icon"><%= image_tag "shovel-icon.png" %></span></li>
+      <li class="logged-in-user">
+      <% if user_signed_in? %>
+        <strong><%= current_user.email %></strong>
+        <% else %>
+        <span>not logged in</span>
+        <% end %>
+      </li>
+      <li class="log-out-btn">
+        <%= button_to "logout", destroy_user_session_path, method: :delete  %>
+      </li>
+    </ul>
+  </div>
+<div class="content-container">
 
-<p class="logged-in-user">You are logged in as:
-  <% if user_signed_in? %>
-    <strong><%= current_user.email %></strong>
-    <% else %>
-    <% end %>
-</p>
+    <h1>Post List</h1>
 
-<ul>
-  <% @posts.each do |post| %>
-  <li>
-    <%= link_to post.title, post %>
-    <%= render "author", :post => post %>
+    <ul>
+      <% @posts.each do |post| %>
+      <li>
+        <%= link_to post.title, post %>
+        <%= render "author", :post => post %>
 
-  </li>
-  <% end %>
-</ul>
+      </li>
+      <% end %>
+    </ul>
 
-<p><%= link_to "Add a new post", new_post_path %></p>
-<p><%= link_to "Sign in", user_session_path %></p>
-<p><%= link_to "New User? Sign up here", new_user_registration_path %></p>
+    <p><%= link_to "Add a new post", new_post_path %></p>
+    <p><%= link_to "Sign in", user_session_path %></p>
+    <p><%= link_to "New User? Sign up here", new_user_registration_path %></p>
+</div>
 
-<p><%= button_to "logout", destroy_user_session_path, method: :delete  %></p>
-
+  <div class="footer"><span>Smelly Industries</span></div>
+</div>
