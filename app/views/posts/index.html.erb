@@ -4,9 +4,15 @@
   <% @posts.each do |post| %>
   <li>
     <%= link_to post.title, post %>
+    <span>by <%= post.user.username %></span>
+
   </li>
   <% end %>
 </ul>
 
-<p><%=link_to "Add a new post", new_post_path %></p>
+<p><%= link_to "Add a new post", new_post_path %></p>
+<p><%= link_to "Sign in", user_session_path %></p>
+<p><%= link_to "New User? Sign up here", new_user_registration_path %></p>
+
+<p><%= button_to "logout", destroy_user_session_path, method: :delete  %></p>
 
