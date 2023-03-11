@@ -240,5 +240,20 @@ label {
   color: var(--xtra-dark-green);
   border: 1px solid var(--light-beige);
   border-radius: 18px;
+}
 
+.post-title {
+  color: var(--beige);
+  font-size: 1.6rem;
+}
+
+.post-author {
+  color: var(--dark-beige);
+  font-size: 1.1rem;
+}
+
+.post-body {
+  padding-top: 10px;
+  color: var(--light-beige);
+  font-size: 1.4rem;
 }
