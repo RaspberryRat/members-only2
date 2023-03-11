@@ -11,7 +11,8 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      flash.now[:error] = "Your post wasn't submitted, please have a minimum of 10 characters"
+      flash.now[:error] = "Your post wasn't submitted"
+
       render :new, status: :unprocessable_entity
     end
   end

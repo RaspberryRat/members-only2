@@ -65,12 +65,10 @@ html {
 .container {
   min-height: 100%;
   min-width: 100%;
-  display: flex;
-  /* grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%; */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
   background-color: var(--light-green);
-  flex-direction: column;
-  justify-content: space-around;
 }
 
 .header,
@@ -126,10 +124,9 @@ html {
   grid-template-columns: 0.5fr 4fr 0.5fr;
   justify-items: center;
   align-items: center;
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
+  position:fixed;
+  bottom: 0;
+
 }
 
 button,
@@ -244,9 +241,15 @@ label {
   align-self: start;
 }
 
-.flash-message {
+.flash-message,
+#error_explanation {
   color: black;
-  font-size: 2rem;
+  font-size: 1.8rem;
+  margin: 10px 60px;
+}
+
+#error_explanation {
+  color: darkred;
 }
 
 #post_title,

@@ -12,37 +12,35 @@
 
   <body>
     <div class="container">
-  <div class="header">
-    <ul>
-      <li class="company-header"><span><%= link_to "Shovel IT", root_path %></span> <span class="company-icon"><%= image_tag "shovel-icon.png" %></span></li>
-      <li class="logged-in-user">
-      <% if user_signed_in? %>
-        <strong><%= current_user.email %></strong>
-        <% else %>
-    <span><%= button_to "Sign in", user_session_path %></span>
+      <div class="header">
+        <ul>
+          <li class="company-header"><span><%= link_to "Shovel IT", root_path %></span> <span class="company-icon"><%= image_tag "shovel-icon.png" %></span></li>
+          <li class="logged-in-user">
+          <% if user_signed_in? %>
+            <strong><%= current_user.email %></strong>
+            <% else %>
+        <span><%= button_to "Sign in", user_session_path %></span>
+            <% end %>
+          </li>
+          <li class="log-out-btn">
+            <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
+          </li>
+        </ul>
+      </div>
+      <div class="content-container">
+        <div class="flash-message">
+          <% flash.each do |name, message| %>
+            <div class="<%= name %>"><%= message %></div>
         <% end %>
-      </li>
-      <li class="log-out-btn">
-        <%= button_to "Logout", destroy_user_session_path, method: :delete  %>
-      </li>
-    </ul>
-  </div>
-<div class="content-container">
-  <div class="flash-message">
-    <% flash.each do |name, message| %>
-      <div class="<%= name %>"><%= message %></div>
-  <% end %>
-  </div>
+        </div>
 
-    <%= yield %>
-
-</div>
-
-  <div class="footer">
-    <span class="link-btn"><%= link_to "Add a new post", new_post_path %></span>
-    <span>Smelly Industries</span>
-    <span class="link-btn"><%= link_to "Sign up here", new_user_registration_path %></span>
-  </div>
-</div>
+        <%= yield %>
+      </div>
+      <div class="footer">
+        <span class="link-btn"><%= link_to "Add a new post", new_post_path %></span>
+        <span>Smelly Industries</span>
+        <span class="link-btn"><%= link_to "Sign up here", new_user_registration_path %></span>
+      </div>
+    </div>
   </body>
 </html>
