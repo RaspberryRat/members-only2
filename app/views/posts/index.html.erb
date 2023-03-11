@@ -12,7 +12,7 @@
           </li>
           <li class="post-body">
             stuff here
-            <%= post.body %>
+            <%= truncate(post.body, :length => 150) %>
           </li>
         </ul>
 

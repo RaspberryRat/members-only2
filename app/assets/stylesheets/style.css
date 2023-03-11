@@ -47,7 +47,8 @@ table {
 * {
   font: "Helvetica", sans-serif;
   font-size: 20px;
-  --beige: hsl(97deg 13% 80%);
+  --beige: #cad3c5;
+  --light-beige: #f0fcec;
   --dark-beige: #969c93;
   --light-green: #84A98C;
   --med-green: #52796F;
@@ -124,6 +125,7 @@ button,
   color: var(--beige);
   border: 0px;
   padding: 3px 8px;
+  border-radius: 8px;
 }
 
 .content-container {
@@ -230,4 +232,13 @@ label {
 .flash-message {
   color: black;
   font-size: 2rem;
+}
+
+#post_title,
+#post_body {
+  background-color: var(--light-beige);
+  color: var(--xtra-dark-green);
+  border: 1px solid var(--light-beige);
+  border-radius: 18px;
+
 }
