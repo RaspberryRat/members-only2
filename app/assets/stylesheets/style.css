@@ -56,22 +56,29 @@ table {
   --xtra-dark-green: #2F3E46;
 }
 
-body {
+body,
+html {
   background-color: var(--light-green);
 }
 
+
 .container {
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 0.5fr 4fr 0.3fr;
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  /* grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%; */
   background-color: var(--light-green);
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .header,
 .footer {
   background-color: var(--beige);
   color: var(--med-green);
+  min-width: 100vw;
+  min-height: 5vh;
 }
 
 .header > ul {
@@ -119,6 +126,10 @@ body {
   grid-template-columns: 0.5fr 4fr 0.5fr;
   justify-items: center;
   align-items: center;
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
 }
 
 button,
