@@ -56,6 +56,10 @@ table {
   --xtra-dark-green: #2F3E46;
 }
 
+body {
+  background-color: var(--light-green);
+}
+
 .container {
   height: 100%;
   width: 100%;
