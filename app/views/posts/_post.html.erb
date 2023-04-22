@@ -1,0 +1,16 @@
+   <ul class="post-list">
+      <li>
+        <ul class="post-container">
+          <li class="post-title">
+            <%= link_to post.title, post %>
+          </li>
+          <li class="post-author">
+            <%= render "author", :post => post %>
+          </li>
+          <li class="post-body">
+            <%= truncate(post.body, :length => 150) %>
+          </li>
+        </ul>
+
+      </li>
+</ul>

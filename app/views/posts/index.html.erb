@@ -1,23 +1,11 @@
 
 
-    <ul class="post-list">
-      <% @posts.each do |post| %>
-      <li>
-        <ul class="post-container">
-          <li class="post-title">
-            <%= link_to post.title, post %>
-          </li>
-          <li class="post-author">
-            <%= render "author", :post => post %>
-          </li>
-          <li class="post-body">
-            <%= truncate(post.body, :length => 150) %>
-          </li>
-        </ul>
-
-      </li>
-      <% end %>
-    </ul>
 
 
+      <div class="index-container">
+        <%= turbo_frame_tag id="new_post", src:new_post_path %>
+        <div id="posts">
+          <%= render @posts %>
+        </div>
+      </div>
 

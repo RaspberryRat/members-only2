@@ -100,6 +100,11 @@ html {
   color: var(--xtra-dark-green);
 }
 
+.index-container {
+  display: grid;
+  grid-template-rows: 0.1fr 1fr;
+}
+
 .company-header span > a {
   text-decoration: none;
   color: var(--med-green);
@@ -146,12 +151,19 @@ button,
   margin: 20px;
 }
 
-.post-list {
+#posts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 30px;
 }
+
+/* .post-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 30px;
+} */
 
 .post-list > li {
   background-color: var(--xtra-dark-green);

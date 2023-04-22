@@ -10,12 +10,13 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
 
-    if @post.save
-      redirect_to root_path
-    else
-      flash.now[:error] = "Your post wasn't submitted"
-
-      render :new, status: :unprocessable_entity
+    respond_to do |format|
+      if @post.save
+        format.turbo_stream
+      else
+        flash.now[:error] = "Your post wasn't submitted"
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -32,7 +33,6 @@ class PostsController < ApplicationController
   def update
     if @post.update(post_params)
       flash[:success] = "You have updated your post."
-      redirect_to @post
     else
       flash[:error] = "You didn't follow the instructions dummy."
       render :edit, status: :unprocessable_entity
