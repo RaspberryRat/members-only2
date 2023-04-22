@@ -1,15 +1,24 @@
 <div class="show-post">
   <div class="content-container">
-    <h3 class="show-title"><%= @post.title %></h3>
-    <%# <%= render "author", :post => post %>
-    <p>
-      <% if user_signed_in? %>
-          <span class="author-clear">by: <%= @post.user.email %></span>
-          <% else %>
-          <span class="anon-author">by Anonymous</span>
-          <% end %>
-    </p>
-    <p class="post-body"> <%= @post.body %></p>
+    <h3 class="show-title">
+
+    <%= turbo_frame_tag @post do %>
+
+      <%= @post.title %></h3>
+
+      <p>
+
+         <% if user_signed_in? %>
+        <span class="author-clear"><%= @post.user.email %></span>
+        <% else %>
+        <span class="anon-author">by Anonymous</span>
+        <% end %>
+
+      </p>
+      <p class="post-body"> <%= @post.body %></p>
+        </br></br></br>
+      <%= link_to 'Edit Post', edit_post_path(@post), class: 'link-btn'  %>
+    <% end %>
 
   </div>
 </div>

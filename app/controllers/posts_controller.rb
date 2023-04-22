@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_post, only: %i[show edit update destroy]
+
 
   def new
     @post = Post.new
@@ -22,12 +24,28 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @post.update(post_params)
+      flash[:success] = "You have updated your post."
+      redirect_to @post
+    else
+      flash[:error] = "You didn't follow the instructions dummy."
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   private
 
   def post_params
     params.require(:post).permit(:title, :body)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "posts/new", to: "posts#new"
   get "posts/:id", to: "posts#show"
 
-  resources :posts, only: [:new, :create, :index, :show]
+  resources :posts
   # resources :users, only: [:destroy]
 
 
